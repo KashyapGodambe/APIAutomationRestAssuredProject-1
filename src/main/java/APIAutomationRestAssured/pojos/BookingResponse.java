@@ -2,13 +2,15 @@ package APIAutomationRestAssured.pojos;
 
 public class BookingResponse {
 	
-	private String bookingId;
+	private Integer bookingid;
 	private Booking booking;
-	public String getBookingId() {
-		return bookingId;
+	
+	
+	public Integer getBookingId() {
+		return bookingid;
 	}
-	public void setBookingId(String bookingId) {
-		this.bookingId = bookingId;
+	public void setBookingId(Integer bookingId) {
+		this.bookingid = bookingId;
 	}
 	public Booking getBooking() {
 		return booking;

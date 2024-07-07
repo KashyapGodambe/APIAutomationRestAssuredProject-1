@@ -1,15 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="Default name">
     <test verbose="2" preserve-order="true" name="ATB6xLearningRestAssured">
         <classes>
             
             
-            <class name="APIAutomationRestAssured.tests.crud.testCreateBookingPOST"> 
-             	<methods>
-					<include name="testCreateBooking"></include>
-				</methods>
-          	</class>
-            
+            <class name="APIAutomationRestAssured.tests.crud.testCreateBookingPOST"/> 
+             	
+          	
             <!-- Add more classes as needed -->
             
         </classes>

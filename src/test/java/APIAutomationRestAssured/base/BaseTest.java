@@ -1,5 +1,6 @@
 package APIAutomationRestAssured.base;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 import APIAutomationRestAssured.actions.AssertActions;
@@ -26,7 +27,7 @@ public class BaseTest {
 
 	@BeforeTest
 	public void setUp() {
-		System.out.println("Before test ");
+		System.out.println("----Before test---- ");
 
 		payloadManager = new PayloadManager();
 		assertActions = new AssertActions();
@@ -35,13 +36,37 @@ public class BaseTest {
 
 		// -------OR--------
 
-//		requestSpecification = RestAssured.given().baseUri(APIConstants.BASE_URL).contentType(ContentType.JSON).log().all();
+//		requestSpecification = RestAssured.given().baseUri(APIConstants.BASE_URL).contentType(ContentType.JSON).log()
+//				.all();
 
 	}
 
 	public String getToken() 
-	{
-		return null;
+	{	
+		
+		//Setting up the URL
+		requestSpecification = RestAssured.given()
+				.baseUri(APIConstants.BASE_URL)
+				.basePath(APIConstants.Auth_URL);
+		
+		//Setting up the payload
+		String payload = payloadManager.SetAuthPayload();
+		
+		
+		//getting the response
+		response = requestSpecification.contentType(ContentType.JSON)
+				.body(payload)
+				.when()
+				.post();
+		
+		//extracting of token via desealization
+		String token = payloadManager.getTokenFromJSON(response.asString());
+		
+		
+		
+		return token;
+		
+		
 	}
 	
 	

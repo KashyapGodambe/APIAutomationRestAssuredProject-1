@@ -1,10 +1,13 @@
 package APIAutomationRestAssured.modules;
 
+import com.github.javafaker.Faker;
 import com.google.gson.Gson;
 
+import APIAutomationRestAssured.pojos.Auth;
 import APIAutomationRestAssured.pojos.Booking;
 import APIAutomationRestAssured.pojos.BookingDates;
 import APIAutomationRestAssured.pojos.BookingResponse;
+import APIAutomationRestAssured.pojos.TokenResponse;
 
 //import ex_270624.gson.serialization.Booking;
 //import ex_270624.gson.serialization.BookingDates;
@@ -12,17 +15,21 @@ import APIAutomationRestAssured.pojos.BookingResponse;
 public class PayloadManager {
 	
 	
-	Gson gson;
+	 Gson gson;
+	
 	
 	public String createPayloadBookingAsString()
 	{
 		
-		
+		System.out.println("Executing Method createPayloadBookingAsString");
 		
 		Booking booking = new Booking();
+		Faker faker = new Faker();
+		
 		booking.setFirstname("Siddhi");
-		booking.setLastname("Mhatre");
-		booking.setTotalprice(420);
+		//booking.setLastname(faker.name().lastName());
+		booking.setLastname("Godbole");
+		booking.setTotalprice(faker.random().nextInt(1000));
 		booking.setDepositpaid(true);
 		
 		BookingDates bookingdates = new BookingDates();
@@ -32,8 +39,18 @@ public class PayloadManager {
 		booking.setBookingdates(bookingdates);
 		booking.setAdditionalneeds("Breakfast");
 		
-		return gson.toJson(booking);
+		
+		gson = new Gson();
+		String jsonPayload = gson.toJson(booking);
+		System.out.println("Payload for Create Booking : " +jsonPayload);
+		return jsonPayload;
 	}
+	
+	
+	public String createInvalidPayloadBookingAsString() {
+        return "{}";
+    }
+
 	
 	
 	
@@ -67,6 +84,47 @@ public class PayloadManager {
 		
 		BookingResponse bookingResponse = gson.fromJson(responseString, BookingResponse.class);
 		return bookingResponse;
+	}
+	
+	
+	
+	public String SetAuthPayload()
+	{
+		Auth auth = new Auth();
+		auth.setUsername("admin");
+		auth.setPassword("password123");
+		
+		gson =  new Gson();
+		//serialization > converting JSON obj to JSON string
+		String jsonPayloadString = gson.toJson(auth);
+		System.out.println("Payload set to : " +jsonPayloadString);
+		return jsonPayloadString;
+	}
+	
+	
+	public String getTokenFromJSON(String tokenResponse)
+	{
+		gson =  new Gson();
+		//Deseralization 
+		//response >> JSON --> Object --tokenReponse
+		
+		TokenResponse tokenReponse1 = gson.fromJson(tokenResponse, TokenResponse.class);
+		
+		return tokenReponse1.getToken();		
+		
+	}
+	
+	
+	public Booking getResponseFromJSON(String getResponse)
+	{
+		gson =  new Gson();
+		//Deseralization 
+		//response >> JSON --> Object --tokenReponse
+		
+		Booking booking = gson.fromJson(getResponse, Booking.class);
+		
+		return booking;	
+		
 	}
 	
 

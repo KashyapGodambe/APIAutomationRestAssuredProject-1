@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite]">
+  <test name="ATB6xLearningRestAssured(failed)">
+    <classes>
+      <class name="APIAutomationRestAssured.tests.integration.TCIntegration">
+        <methods>
+          <include name="testUpdateByBookingId" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="testDeleteByBookingId" invocation-numbers="0"/>
+          <include name="testVerifyBookingId" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- APIAutomationRestAssured.tests.integration.TCIntegration -->
+    </classes>
+  </test> <!-- ATB6xLearningRestAssured(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

@@ -22,6 +22,7 @@ public class Booking {
 	private Boolean depositpaid;
 	private BookingDates bookingdates;
 	private String additionalneeds;
+	
 	public String getFirstname() {
 		return firstname;
 	}

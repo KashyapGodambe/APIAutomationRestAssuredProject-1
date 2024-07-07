@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-07-07T20:18:04Z" name="Restful Booker Project#01" finished-at="2024-07-07T20:18:13Z" duration-ms="9658">
+    <groups>
+      <group name="integration">
+        <method signature="TCIntegration.testCreateBooking(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" name="testCreateBooking" class="APIAutomationRestAssured.tests.integration.TCIntegration"/>
+        <method signature="TCIntegration.testDeleteByBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" name="testDeleteByBookingId" class="APIAutomationRestAssured.tests.integration.TCIntegration"/>
+        <method signature="TCIntegration.testUpdateByBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" name="testUpdateByBookingId" class="APIAutomationRestAssured.tests.integration.TCIntegration"/>
+        <method signature="TCIntegration.testVerifyBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" name="testVerifyBookingId" class="APIAutomationRestAssured.tests.integration.TCIntegration"/>
+      </group> <!-- integration -->
+    </groups>
+    <test started-at="2024-07-07T20:18:04Z" name="ATB6xLearningRestAssured" finished-at="2024-07-07T20:18:13Z" duration-ms="9658">
+      <class name="APIAutomationRestAssured.tests.integration.TCIntegration">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:04Z" name="setUp" finished-at="2024-07-08T01:48:04Z" duration-ms="472" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCreateBooking(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:04Z" name="testCreateBooking" finished-at="2024-07-08T01:48:09Z" duration-ms="4651" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@27494e46]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateBooking -->
+        <test-method signature="testVerifyBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:09Z" name="testVerifyBookingId" finished-at="2024-07-08T01:48:10Z" duration-ms="1386" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@27494e46]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testVerifyBookingId -->
+        <test-method signature="testUpdateByBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:10Z" name="testUpdateByBookingId" finished-at="2024-07-08T01:48:12Z" duration-ms="1543" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@27494e46]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateByBookingId -->
+        <test-method signature="testDeleteByBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:12Z" name="testDeleteByBookingId" finished-at="2024-07-08T01:48:13Z" duration-ms="1515" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@27494e46]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeleteByBookingId -->
+      </class> <!-- APIAutomationRestAssured.tests.integration.TCIntegration -->
+    </test> <!-- ATB6xLearningRestAssured -->
+  </suite> <!-- Restful Booker Project#01 -->
+</testng-results>
