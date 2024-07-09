@@ -17,7 +17,7 @@ import io.restassured.RestAssured;
 
 public class testCreateBookingPOST extends BaseTest {
 	
-	PayloadManager payloadManager;
+	private PayloadManager payloadManager;
 	
 	@Test
 	@Owner("Kashyap")
@@ -25,10 +25,15 @@ public class testCreateBookingPOST extends BaseTest {
 	@Description("TC#1 - Verify that the booking can be created")
 	public void testCreateBooking()
 	{	
+		
+		//String payload = payloadManager.createPayloadBookingAsString();
 		requestSpecification.basePath(APIConstants.CREATE_UPDATE_BOOKING_URL);
-		response = RestAssured.given().spec(requestSpecification)
-				.body(payloadManager.createPayloadBookingAsString())
-				.when().post();
+//		response = RestAssured.given().spec(requestSpecification)
+//				.body(payloadManager.createPayloadBookingAsString())
+//				.when().log().all().post();
+		
+		response = requestSpecification.body(payloadManager.createPayloadBookingAsString())
+				.when().log().all().post();
 		
 		
 		
@@ -37,26 +42,8 @@ public class testCreateBookingPOST extends BaseTest {
 		validatableResponse.statusCode(200); 
 		
 		
-		BookingResponse bookingResponse = payloadManager.bookingresponseJava(response.asString());
-		System.out.println("BookIng response is :::::::: "+bookingResponse);
-		
-		
-		//------------------------------------------------------------
-//		System.out.println("base path ----- :"+APIConstants.CREATE_UPDATE_BOOKING_URL);
-//		
-//		requestSpecification.basePath(APIConstants.CREATE_UPDATE_BOOKING_URL);
-//		response = RestAssured.given(requestSpecification).body(payloadManager.createPayloadBookingAsString()).when()
-//				.post();
-//
-//		validatableResponse = response.then().log().all();
-//
-//		validatableResponse.statusCode(200);
-////		validatableResponse.body("booking.firstname", Matchers.equalTo("Siddhi"));
-//		
-//		//De-serialize the response
-//		
-//		BookingResponse bookingResponse = payloadManager.bookingresponseJava(response.getBody().asString());
-//		System.out.println("BookIng response is :::::::: "+bookingResponse);
+		BookingResponse bookingResponse = payloadManager.bookingresponseJava(response.getBody().asString());
+		System.out.println("Booking response is :::::::: "+bookingResponse);
 		
 		
 		
@@ -82,7 +69,7 @@ public class testCreateBookingPOST extends BaseTest {
 		System.out.println("base path ----- :"+APIConstants.CREATE_UPDATE_BOOKING_URL);
 		
 		requestSpecification.basePath(APIConstants.CREATE_UPDATE_BOOKING_URL);
-		response = RestAssured.given(requestSpecification).body(payloadManager.createPayloadBookingAsString())
+		response = RestAssured.given(requestSpecification).body(payloadManager.createInvalidPayloadBookingAsString())
 				.when().post();
 		
 		

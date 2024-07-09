@@ -1,67 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="4" passed="4" failed="0" skipped="0">
+<testng-results total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-07T20:18:04Z" name="Restful Booker Project#01" finished-at="2024-07-07T20:18:13Z" duration-ms="9658">
+  <suite started-at="2024-07-08T08:06:05Z" name="Default suite" finished-at="2024-07-08T08:06:06Z" duration-ms="578">
     <groups>
-      <group name="integration">
-        <method signature="TCIntegration.testCreateBooking(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" name="testCreateBooking" class="APIAutomationRestAssured.tests.integration.TCIntegration"/>
-        <method signature="TCIntegration.testDeleteByBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" name="testDeleteByBookingId" class="APIAutomationRestAssured.tests.integration.TCIntegration"/>
-        <method signature="TCIntegration.testUpdateByBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" name="testUpdateByBookingId" class="APIAutomationRestAssured.tests.integration.TCIntegration"/>
-        <method signature="TCIntegration.testVerifyBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" name="testVerifyBookingId" class="APIAutomationRestAssured.tests.integration.TCIntegration"/>
-      </group> <!-- integration -->
     </groups>
-    <test started-at="2024-07-07T20:18:04Z" name="ATB6xLearningRestAssured" finished-at="2024-07-07T20:18:13Z" duration-ms="9658">
-      <class name="APIAutomationRestAssured.tests.integration.TCIntegration">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:04Z" name="setUp" finished-at="2024-07-08T01:48:04Z" duration-ms="472" status="PASS">
+    <test started-at="2024-07-08T08:06:05Z" name="Default test" finished-at="2024-07-08T08:06:06Z" duration-ms="578">
+      <class name="APIAutomationRestAssured.tests.crud.testCreateBookingPOST">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:APIAutomationRestAssured.tests.crud.testCreateBookingPOST@29ca3d04]" started-at="2024-07-08T13:36:05Z" name="setUp" finished-at="2024-07-08T13:36:06Z" duration-ms="437" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testCreateBooking(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:04Z" name="testCreateBooking" finished-at="2024-07-08T01:48:09Z" duration-ms="4651" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@27494e46]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="testCreateBooking()[pri:0, instance:APIAutomationRestAssured.tests.crud.testCreateBookingPOST@29ca3d04]" started-at="2024-07-08T13:36:06Z" name="testCreateBooking" finished-at="2024-07-08T13:36:06Z" duration-ms="35" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "APIAutomationRestAssured.modules.PayloadManager.createPayloadBookingAsString()" because "this.payloadManager" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "APIAutomationRestAssured.modules.PayloadManager.createPayloadBookingAsString()" because "this.payloadManager" is null
+	at APIAutomationRestAssured.tests.crud.testCreateBookingPOST.testCreateBooking(testCreateBookingPOST.java:35)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateBooking -->
-        <test-method signature="testVerifyBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:09Z" name="testVerifyBookingId" finished-at="2024-07-08T01:48:10Z" duration-ms="1386" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@27494e46]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="testCreateBookingNegative()[pri:0, instance:APIAutomationRestAssured.tests.crud.testCreateBookingPOST@29ca3d04]" started-at="2024-07-08T13:36:06Z" name="testCreateBookingNegative" finished-at="2024-07-08T13:36:06Z" duration-ms="34" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "APIAutomationRestAssured.modules.PayloadManager.createInvalidPayloadBookingAsString()" because "this.payloadManager" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "APIAutomationRestAssured.modules.PayloadManager.createInvalidPayloadBookingAsString()" because "this.payloadManager" is null
+	at APIAutomationRestAssured.tests.crud.testCreateBookingPOST.testCreateBookingNegative(testCreateBookingPOST.java:72)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testVerifyBookingId -->
-        <test-method signature="testUpdateByBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:10Z" name="testUpdateByBookingId" finished-at="2024-07-08T01:48:12Z" duration-ms="1543" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@27494e46]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUpdateByBookingId -->
-        <test-method signature="testDeleteByBookingId(org.testng.ITestContext)[pri:0, instance:APIAutomationRestAssured.tests.integration.TCIntegration@4310d43]" started-at="2024-07-08T01:48:12Z" name="testDeleteByBookingId" finished-at="2024-07-08T01:48:13Z" duration-ms="1515" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@27494e46]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDeleteByBookingId -->
-      </class> <!-- APIAutomationRestAssured.tests.integration.TCIntegration -->
-    </test> <!-- ATB6xLearningRestAssured -->
-  </suite> <!-- Restful Booker Project#01 -->
+        </test-method> <!-- testCreateBookingNegative -->
+      </class> <!-- APIAutomationRestAssured.tests.crud.testCreateBookingPOST -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

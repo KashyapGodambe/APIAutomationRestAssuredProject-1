@@ -6,6 +6,7 @@
       <class name="APIAutomationRestAssured.tests.crud.testCreateBookingPOST">
         <methods>
           <include name="setUp"/>
+          <include name="testCreateBookingNegative"/>
           <include name="testCreateBooking"/>
         </methods>
       </class> <!-- APIAutomationRestAssured.tests.crud.testCreateBookingPOST -->

@@ -28,16 +28,19 @@ public class BaseTest {
 	@BeforeTest
 	public void setUp() {
 		System.out.println("----Before test---- ");
+		System.out.println("----Base URL---- :" +APIConstants.BASE_URL);
 
 		payloadManager = new PayloadManager();
 		assertActions = new AssertActions();
-		requestSpecification = new RequestSpecBuilder().setBaseUri(APIConstants.BASE_URL)
-				.addHeader("Content-Type", "application/json").build().log().all();
+//		requestSpecification = new RequestSpecBuilder().setBaseUri(APIConstants.BASE_URL)
+//				.addHeader("Content-Type", "application/json").build().log().all();
 
 		// -------OR--------
 
-//		requestSpecification = RestAssured.given().baseUri(APIConstants.BASE_URL).contentType(ContentType.JSON).log()
-//				.all();
+		requestSpecification = RestAssured.given()
+				.baseUri(APIConstants.BASE_URL)
+				.contentType(ContentType.JSON)
+				.log().all();
 
 	}
 
